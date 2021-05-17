@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Piece, King, Pawn, Castle, Knight, Bishop, Check, Move } from '../piece';
+import { Piece, King, Pawn, Castle, Knight, Bishop, Check, Move, Pawn2 } from '../piece';
 import { Location } from '../location'
 
 @Component({
@@ -63,7 +63,7 @@ export class GameComponent implements OnInit {
           this.location[i].push(new Location(new King("assets/images/king-w.png")));
         }
         else if (i == 6) {
-          this.location[i].push(new Location(new Pawn("assets/images/pawn-w.png")));
+          this.location[i].push(new Location(new Pawn2("assets/images/pawn-w.png")));
         }
         else { this.location[i].push(new Location(new Piece(""))); }
       }
@@ -88,6 +88,7 @@ export class GameComponent implements OnInit {
         if (this.selectedLocation.piece.image.length > 0) {
           this.selectedLocation.highlight = false
         }
+        
       }
     }
   }

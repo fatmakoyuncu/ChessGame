@@ -70,18 +70,25 @@ export class Knight extends Piece{
 export class Castle extends Piece{
     // image = "assets/images/castle.png";
     moves = [
-        {x:1, y:0,null:false, move: false, take:false, eatPiece:true, repeat:8}
+        {x:1, y:0,null:false, move: false, take:false, eatPiece:true, repeat:8},
+        {x:0, y:1,null:false, move: false, take:false, eatPiece:true, repeat:8},
+        {x:-1, y:0,null:false, move: false, take:false, eatPiece:true, repeat:8},
+        {x:0, y:-1,null:false, move: false, take:false, eatPiece:true, repeat:8}
     ]
 }
 export class Pawn extends Piece{
     // image = "assets/images/pawn.png";
     moves = [
         {x:1, y:0,null:false, move: true, take:false, eatPiece:false, repeat:1},
-        {x:2, y:0,null:false, move: false, take:false, eatPiece:false, repeat:1},
-        {x:-1, y:0,null:false, move: true, take:false, eatPiece:false, repeat:1},
-        {x:-2, y:0,null:false, move: false, take:false, eatPiece:false, repeat:1}
-        
+        {x:2, y:0,null:false, move: false, take:false, eatPiece:false, repeat:1}
 
         //piyon capraz da gıdıyo, oraları ayarla, çaprazlarda tas yeme=take
+    ]
+}
+export class Pawn2 extends Piece{
+    // image = "assets/images/pawn.png";
+    moves = [
+        {x:-1, y:0,null:false, move: true, take:false, eatPiece:false, repeat:1},
+        {x:-2, y:0,null:false, move: false, take:false, eatPiece:false, repeat:1}
     ]
 }
