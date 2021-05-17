@@ -16,15 +16,15 @@
                             <p>{{num}}</p>
                         </div>
                     </div>
-                    <div class="column">
+                    <div class="column" (drop)="drop($event)"
+                    (dragover)="allowDrop($event)">
                         <div class="row" *ngFor="let row of location; let i=index" #row>
-                            <div class="location" *ngFor="let loc of row; let j=index" #location (drop)="drop($event)"
-                                (dragover)="allowDrop($event)" >
-                                <div class="loc" *ngIf="loc.piece.image.length>0" else loctwo [class.gosterge]="loc.highlight" (click)="select(i,j)">
-                                    <img [src]="loc.piece.image" draggable="true" (dragstart)="drag($event)" [id]="j"
+                            <div class="location" *ngFor="let loc of row; let j=index" #location >
+                                <div class="loc" *ngIf="loc.piece.image.length>0" else loctwo [class.highlight]="loc.highlight" (click)="select(i,j)">
+                                    <img [src]="loc.piece.image" draggable="true" (dragstart)="drag($event)" [id]="i"
                                         style="width: 40px; height: 40px;" />
                                 </div>
-                                <div class="locktwo" [class.gosterge]="loc.highlight" (click)="select(i,j)">
+                                <div class="locktwo" [class.highlight]="loc.highlight" (click)="select(i,j)">
                                     <ng-template #loctwo>{{loc.piece.image}}</ng-template>
                                 </div>
                             </div>
