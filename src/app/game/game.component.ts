@@ -98,7 +98,6 @@ export class GameComponent implements OnInit {
       for (let j = 0; j < this.location.length; j++) {
         this.location[i][j].highlight = false
       }
-
     }
   }
 
